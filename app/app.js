@@ -13,6 +13,10 @@ if (GETH_HOSTNAME === "0.0.0.0") {
     GETH_HOSTNAME = window.location.hostname
 }
 
+if (GETH_RPCPORT === 0) {
+    GETH_RPCPORT = window.location.port
+}
+
 // this is creating the corrected geth command
 var WL=window.location;
 var geth_command	= "geth --rpc --rpcaddr "+ GETH_HOSTNAME + " --rpcport " + GETH_RPCPORT +'\
